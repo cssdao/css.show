@@ -25,8 +25,8 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-          <h1 className='font-bold text-white text-[68px] leading-tight'>
-            <span className='text-[88px]'>CSS DAO</span><br />
+          <h1 className='font-bold text-white text-[58px] sm:text-[68px] leading-tight'>
+            <span className='text-[78px] md:text-[88px]'>CSS DAO</span><br />
             开放、透明、<br />协作和创新。
           </h1>
         </div>
@@ -34,7 +34,7 @@ export default function Home() {
           <Image
             src="/logo.svg"
             alt="CSS DAO"
-            className=""
+            className=" w-64 sm:w-400"
             width={400}
             height={400}
             priority
