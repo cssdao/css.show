@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.0.3",
+    "@radix-ui/react-slot": "^1.0.1",
+    "@react-three/drei": "^9.68.3",
     "@react-three/fiber": "^8.13.0",
+    "@react-three/postprocessing": "^2.11.4",
     "@types/node": "20.1.0",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
