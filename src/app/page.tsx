@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { TypographyH1, TypographyInlineCode, TypographyP } from '@/components/ui/typography';
-import { Github, Twitter } from 'lucide-react';
+import { TypographyH1, TypographyH4, TypographyInlineCode, TypographyP } from '@/components/ui/typography';
+import { Github, MousePointerClick, QrCode, Twitter } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -51,6 +51,46 @@ export default function Home() {
           我们坚信，Web3 的未来是去中心化、安全、开放和透明的。因此，我们将致力于开发去中心化应用（DApps）、智能合约和其他 Web3 相关技术，为用户提供更加安全、私密和自主的在线体验。我们还将支持和参与 Web3 的标准化工作，以确保 Web3 生态系统的互操作性和可持续性。<br /><br />
           CSS DAO 的核心价值观是开放、透明、协作和创新。我们欢迎各种背景和技术水平的人加入我们的社区，共同探索、学习和创造 Web3 的未来。我们相信，通过 CSS DAO 的努力和不断的创新，可以让 Web3 技术更加完善、普及，推动 Web3 世界的可持续发展。
         </TypographyP>
+      </div>
+
+      <div className='relative flex flex-col md:flex-row'>
+        <div className='w-full md:w-1/2 p-4 md:p-8 lg:p-24 xl:p-32 2xl:p-48 bg-[#f8fcfa]'>
+          <TypographyH1>加入我们</TypographyH1>
+        </div>
+        <div className='w-full md:w-1/2 flex flex-wrap divide-y md:divide-y-0 divide-gray-200'>
+          <Link href='https://twitter.com/cssdao' className='transition ease-in-out z-10 w-full block relative md:w-1/2 md:border-r md:border-b bg-[#f2f4f3] shadow-none hover:bg-[#f8fcfa] hover:shadow-2xl hover:border-[#f8fcfa] border-gray-200 before:block before:pt-[100%]'>
+            <div className='absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center'>
+              <div className='rounded-full bg-blue-500 text-white w-20 h-20 flex flex-col justify-center items-center mb-2'>
+                <Twitter className="h-10 w-10" />
+              </div>
+              <TypographyH4>Twitter @cssdao</TypographyH4>
+            </div>
+          </Link>
+          <Link href='https://github.com/cssdao' className='transition ease-in-out z-10 w-full block relative md:w-1/2 md:border-b bg-[#f2f4f3] shadow-none hover:bg-[#f8fcfa] hover:shadow-2xl hover:border-[#f8fcfa] border-gray-200 before:block before:pt-[100%]'>
+            <div className='absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center'>
+              <div className='rounded-full bg-black text-white w-20 h-20 flex flex-col justify-center items-center mb-2'>
+                <Github className="h-10 w-10" />
+              </div>
+              <TypographyH4>Github @cssdao</TypographyH4>
+            </div>
+          </Link>
+          <Link href='https://discord.gg/zRaDp3QvNu' className='transition ease-in-out z-10 w-full block relative md:w-1/2 md:border-r md:border-b bg-[#f2f4f3] shadow-none hover:bg-[#f8fcfa] hover:shadow-2xl hover:border-[#f8fcfa] border-gray-200 before:block before:pt-[100%]'>
+            <div className='absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center'>
+              <div className='rounded-full bg-blue-600 text-white w-20 h-20 flex flex-col justify-center items-center mb-2'>
+                <MousePointerClick className="h-10 w-10" />
+              </div>
+              <TypographyH4>Discord @cssdao</TypographyH4>
+            </div>
+          </Link>
+          <div className='transition ease-in-out z-10 w-full block relative md:w-1/2 bg-[#f2f4f3] shadow-none hover:bg-[#f8fcfa] hover:shadow-2xl before:block before:pt-[100%]'>
+            <div className='absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center'>
+              <div className='rounded-full bg-green-500 text-white w-20 h-20 flex flex-col justify-center items-center mb-2'>
+                <QrCode className="h-10 w-10" />
+              </div>
+              <TypographyH4>Wechat coming soon</TypographyH4>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   )
