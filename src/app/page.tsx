@@ -4,7 +4,7 @@ import { TypographyH1, TypographyH4, TypographyInlineCode, TypographyP } from '@
 import { Github, LogOut, MousePointerClick, QrCode, Twitter, User, Wallet } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { WagmiConfig, createConfig, mainnet, useAccount, useConnect, useDisconnect } from 'wagmi';
+import { WagmiConfig, createConfig, mainnet, useAccount, useConnect, useDisconnect, useEnsName } from 'wagmi';
 import { createPublicClient, http } from 'viem';
 import { InjectedConnector } from 'wagmi/connectors/injected';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuItem } from '@/components/ui/dropdown-menu';
@@ -19,6 +19,7 @@ const config = createConfig({
 
 const Profile = () => {
   const { address, isConnected } = useAccount()
+  const { data: ensName } = useEnsName({ address })
   const { connect } = useConnect({
     connector: new InjectedConnector(),
   })
@@ -37,7 +38,7 @@ const Profile = () => {
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <User className="mr-2 h-4 w-4" />
-                <span className='max-w-full block truncate' title={address}>{address}</span>
+                <span className='max-w-full block truncate' title={ensName ?? address}>{ensName ?? address}</span>
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
