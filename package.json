@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.0.3",
+    "@radix-ui/react-dropdown-menu": "^2.0.4",
     "@radix-ui/react-slot": "^1.0.1",
     "@types/node": "20.1.0",
     "@types/react": "18.2.6",
@@ -29,6 +30,8 @@
     "tailwindcss": "3.3.2",
     "tailwindcss-animate": "^1.0.5",
     "typescript": "5.0.4",
+    "viem": "^0.3.30",
+    "wagmi": "^1.0.5",
     "web3": "^1.10.0"
   }
 }
