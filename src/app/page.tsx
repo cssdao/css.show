@@ -1,13 +1,14 @@
 'use client'
 import { Button } from '@/components/ui/button';
 import { TypographyH1, TypographyH4, TypographyInlineCode, TypographyP } from '@/components/ui/typography';
-import { Github, LogOut, MousePointerClick, QrCode, Twitter, User, Wallet } from 'lucide-react';
+import { Github, LogOut, Moon, MousePointerClick, QrCode, Sun, Twitter, User, Wallet } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { WagmiConfig, createConfig, mainnet, useAccount, useConnect, useDisconnect, useEnsName } from 'wagmi';
 import { createPublicClient, http } from 'viem';
 import { InjectedConnector } from 'wagmi/connectors/injected';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuItem } from '@/components/ui/dropdown-menu';
+import { useState } from 'react';
 
 const config = createConfig({
   autoConnect: true,
@@ -53,6 +54,26 @@ const Profile = () => {
   return <Button onClick={() => connect()}><Wallet className="mr-2 h-4 w-4" />连接钱包</Button>
 }
 
+const ThemeBtn = () => {
+  const [darkMode, setDarkMode] = useState<boolean>(false);
+
+  return (
+    <div className=''>
+      <Button
+        onClick={() => setDarkMode(s => !s)}
+        className='cursor-pointer'
+        title={darkMode ? '切换到明亮模式' : '切换到暗黑模式'}
+      >
+        {darkMode ? (
+          <Moon className="h-4 w-4" />
+        ) : (
+          <Sun className="h-4 w-4" />
+        )}
+      </Button>
+    </div>
+  )
+}
+
 const App = () => (
   <main className="relative">
     <div className="bg-black w-full min-h-screen overflow-hidden relative">
@@ -60,7 +81,8 @@ const App = () => (
       <div id="stars2" />
       <div id="stars3" />
       <div className="absolute top-0 right-0 bottom-0 left-0 z-10 flex flex-col-reverse md:flex-row items-center justify-center p-4 md:p-8 lg:p-24 xl:p-32 2xl:p-48">
-        <div className='absolute top-4 right-4 z-10'>
+        <div className='absolute top-4 right-4 z-10 flex items-center flex-row justify-start space-x-2'>
+          {/* <ThemeBtn /> */}
           <Profile />
         </div>
         <div className='md:mr-4'>
